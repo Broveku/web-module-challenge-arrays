@@ -34,6 +34,10 @@ const originalFlavors = [
     "Vanilla",
     "Vanilla Burnt Almond"
 ]
+const originalFlavors2 = [...originalFlavors]
+
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: Copy the Array! 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 We have an array called originalFlavors with 31 flavors (see above).  In these tasks, we will be reading and writing data to this array.  
@@ -212,7 +216,7 @@ function getAverageWordLength(array){
     let getaverageWord = totalWords / array.length
     return getaverageWord
 }
-console.log(getAverageWordLength(originalFlavors))
+// console.log(getAverageWordLength(originalFlavors))
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
@@ -227,9 +231,40 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
+function getRandomFlavors(array,array2,array3,array4){
+    const gigaChad = [...array,...array2,...array3,...array4]
+    let randomFlavors= []
+    while(randomFlavors.length<31){
+        let randomIndex = Math.floor(Math.random() * ((gigaChad.length)-0)+0)
+        randomFlavors.push(gigaChad[randomIndex])
+        gigaChad.splice(randomIndex,1)
+        
+
+    }
+    return randomFlavors
+
 }
+    // let flavorArrays = [array,array2,array3,array4]
+
+    // for(let i=0; i<4 ; i++){
+    //     let flavorArray = flavorArrays[i]
+    //         for (let i=0; i<8; i++){
+    //              let randomIndex = Math.floor(Math.random() * ((flavorArray.length)-0)+0)
+
+    //             flavorArray.splice(randomIndex,1)
+    //             randomFlavors.push (flavorArray[randomIndex])
+                
+    //         }
+
+        
+    
+    // }
+    
+// getRandomFlavors(originalFlavors,newFlavors,seasonalFlavors,regionalFlavors)
+
+
+
+
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
@@ -311,7 +346,7 @@ const regionalFlavors = [
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"
 ]
-
+getRandomFlavors(originalFlavors2,newFlavors,seasonalFlavors,regionalFlavors)
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
